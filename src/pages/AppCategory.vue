@@ -129,12 +129,6 @@ h2 {
   color: #195ee6;
 }
 
-.wrap-group {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
 .group {
   position: relative;
   width: 100%;

@@ -1,14 +1,27 @@
 <script>
 import PaymentSettings from "./settings/PaymentSettings.vue";
 import ContentSettings from "./settings/ContentSettings.vue";
+import SiteSettings from "./settings/SiteSettings.vue";
+import NewsSettings from "./settings/NewsSettings.vue";
+import MailSettings from "./settings/MailSettings.vue";
+import SmsSettings from "./settings/SmsSettings.vue";
+import BusinessSettings from "./settings/BusinessSettings.vue";
 export default {
   name: "AppSettings",
-  components: { PaymentSettings, ContentSettings },
+  components: {
+    PaymentSettings,
+    ContentSettings,
+    SiteSettings,
+    NewsSettings,
+    MailSettings,
+    SmsSettings,
+    BusinessSettings,
+  },
   data() {
     return {
       id: 25616,
       email: "zankov.vadik@yandex.ru",
-      active: 2,
+      active: 5,
     };
   },
   methods: {
@@ -74,20 +87,37 @@ export default {
         @click="changeStat(5)"
         :class="{ active: active == 5 }"
       >
-        Шаблон писем
+        Шаблоны писем
       </button>
       <button
         class="btn"
         @click="changeStat(6)"
         :class="{ active: active == 6 }"
       >
+        Шаблоны СМС
+      </button>
+      <button
+        class="btn"
+        @click="changeStat(7)"
+        :class="{ active: active == 7 }"
+      >
         Видео
+      </button>
+      <button
+        class="btn"
+        @click="changeStat(8)"
+        :class="{ active: active == 8 }"
+      >
+        Готовый бизнес
       </button>
     </div>
     <PaymentSettings v-if="active == 1" />
     <ContentSettings v-if="active == 2" />
-    <!-- <MinersUser v-if="active == 3" />
-    <TicketsUser v-if="active == 4" /> -->
+    <SiteSettings v-if="active == 3" />
+    <NewsSettings v-if="active == 4" />
+    <MailSettings v-if="active == 5" />
+    <SmsSettings v-if="active == 6" />
+    <BusinessSettings v-if="active == 8" />
   </main>
 </template>
 <style scoped>
