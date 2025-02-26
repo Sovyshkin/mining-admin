@@ -36,7 +36,15 @@ export default {
       ],
     };
   },
-  methods: {},
+  methods: {
+    open() {
+      try {
+        this.$router.push({ name: "category" });
+      } catch (err) {
+        console.log(err);
+      }
+    },
+  },
 };
 </script>
 <template>
@@ -54,7 +62,7 @@ export default {
       <span class="options-field"></span>
     </div>
     <div class="cards">
-      <div class="card" v-for="card in cards" :key="card.id">
+      <div class="card" @click="open" v-for="card in cards" :key="card.id">
         <span class="card-item">{{ card.id }}</span>
         <span class="card-item">{{ card.name }}</span>
         <span class="card-item"

@@ -84,14 +84,34 @@ const router = createRouter({
       name: "payments",
     },
     {
+      path: "/payment",
+      component: () => import("../pages/AppPayment.vue"),
+      name: "payment",
+    },
+    {
       path: "/orders",
       component: () => import("../pages/AppOrders.vue"),
       name: "orders",
     },
     {
+      path: "/order",
+      component: () => import("../pages/AppOrder.vue"),
+      name: "order",
+    },
+    {
       path: "/workers",
       component: () => import("../pages/AppWorkers.vue"),
       name: "workers",
+    },
+    {
+      path: "/mailing",
+      component: () => import("../pages/AppMailing.vue"),
+      name: "mailing",
+    },
+    {
+      path: "/settings",
+      component: () => import("../pages/AppSettings.vue"),
+      name: "settings",
     },
   ],
 });
